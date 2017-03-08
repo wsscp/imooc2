@@ -1,0 +1,30 @@
+<!DOCTYPE hibernate-configuration PUBLIC
+	"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+	<session-factory>
+		<property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+<!-- 		<property name="hibernate.connection.url">jdbc:mysql:///test1</property> -->
+<!-- <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/test?useUnicode=true&amp;characterEncoding=utf-8</property> -->
+		<property name="hibernate.connection.url">jdbc:mysql://localhost:3306/test1</property>
+		
+		<property name="hibernate.connection.username">root</property>
+		<property name="hibernate.connection.password"></property>
+		<!-- hibernate配置数据库方言 -->
+		<property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+		<!-- 2. 其他相关配置 -->
+		<!-- 2.1 显示hibernate在运行时候执行的sql语句 -->
+		<property name="show_sql">true</property>
+		<!-- 2.2 格式化sql -->
+		<property name="format_sql">true</property>
+		<!-- 2.3 自动建表 -->
+<!-- 		<property name="hbm2ddl.auto">create</property> -->
+		<property name="hbm2ddl.auto">update</property>
+		<property name="hibernate_current_session_context_class">thread</property>
+
+		<mapping resource="entity/Students.hbm.xml" />
+		<mapping resource="entity/Users.hbm.xml" />
+
+	</session-factory>
+</hibernate-configuration>
